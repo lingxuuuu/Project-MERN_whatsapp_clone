@@ -20,6 +20,7 @@ function Chat( {messages}) {
         timestamp: new Date().toUTCString(),
         received: true
     });
+    
     setInput(' ');
   };
 
@@ -29,10 +30,10 @@ function Chat( {messages}) {
     return (
         <div className='chat'>
             <div className='chat_header'>
-                <Avatar />
+                <Avatar src='https://avatars.dicebear.com/api/human/a23.svg'/>
                 <div className='chat_headerInfo'>
                     <h3>Mern Stack Discussion Room</h3>
-                    <p>{new Date().toUTCString()}</p>
+                    <p>Last seen {new Date().toUTCString()}</p>
                </div>
                <div className='chat_headerRight'>
                     <IconButton>
