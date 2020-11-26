@@ -5,9 +5,18 @@ import Sidebar from './Sidebar';
 import Pusher from 'pusher-js';
 //import axios from 'axios';
 import axios from './axios';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from './Login';
 
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
+
+
+
+
 
   const [messages, setMessages] = useState([]);
 
@@ -41,10 +50,25 @@ function App() {
 
   return (
     <div className="app">
-      <div className='app_body'>
-         <Sidebar />
-         <Chat messages={messages} />
+      {!user ? (
+          <Login />
+      ) : (
+        <div className='app_body'>
+        <Router>
+           <Sidebar />
+           <Switch>
+            <Route path ='/rooms/:roomId'>
+              <Chat messages={messages} />
+            </Route>
+
+            <Route path = '/'>
+              <chat messages={messages} />
+            </Route>
+           
+          </Switch>
+         </Router>  
       </div>
+      )}
     </div>
   );
 }

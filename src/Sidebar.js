@@ -22,12 +22,10 @@ function Sidebar() {
                 }))
         ))
         )
-        return () => {
-            Unsubscribe();
-        }
+        //return () => {
+            //Unsubscribe();
+        //}
     }, [])
-
-
 
     return (
         <div className='sidebar'>
