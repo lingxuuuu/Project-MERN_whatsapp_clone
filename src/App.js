@@ -7,16 +7,13 @@ import Pusher from 'pusher-js';
 import axios from './axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './Login';
+import { useStateValue } from './StateProvider'
+import { formatMs } from '@material-ui/core';
 
 
 function App() {
 
-  const [user, setUser] = useState(null);
-
-
-
-
-
+  const [{ user }, dispatch] = useStateValue();
 
   const [messages, setMessages] = useState([]);
 
@@ -72,5 +69,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
