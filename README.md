@@ -1,4 +1,4 @@
-# This app is deploed with Firebase on: http:whatsapp-mern-75567.web.app
+# This app is deploed with Firebase on: https://whatsapp-mern-75567.web.app/
 
 # Getting Started with Create React App
 
